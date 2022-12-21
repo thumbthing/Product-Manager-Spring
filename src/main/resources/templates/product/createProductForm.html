@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="container">
+    <form action="/product/create" method="post">
+        <!--      // post를 허용해야함-->
+        <div class="form-group">
+            <label for="name">상품명</label>
+            <h1>상품 등록</h1>
+            <input type="text" id="name" name="name" placeholder="제품명">
+            <input type="int" id="price" name="price" placeholder="가격">
+            <input type="int" id="stock" name="stock" placeholder="재고량">
+        </div>
+        <button type="submit">상품 등록</button>
+    </form>
+</div> <!-- /container -->
+</body>
+</html>
