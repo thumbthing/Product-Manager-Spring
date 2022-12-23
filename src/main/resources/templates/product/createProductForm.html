@@ -1,18 +1,42 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+    <meta charset="utf-8">
+    <link href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+<!--    <link href="css\bootstrap.min.css" rel="stylesheet">-->
+</head>
 <body>
-<div class="container">
-    <form action="/product/create" method="post">
-        <!--      // post를 허용해야함-->
-        <div class="form-group">
-            <label for="name">상품명</label>
-            <h1>상품 등록</h1>
-            <input type="text" id="name" name="name" placeholder="제품명">
-            <input type="int" id="price" name="price" placeholder="가격">
-            <input type="int" id="stock" name="stock" placeholder="재고량">
-        </div>
-        <button type="submit">상품 등록</button>
-    </form>
+<div class="container" style="max-width: 600px">
+    <div class="row mb-3 py-3 text-left">
+        <form action="/product/create" method="post">
+            <!--      // post를 허용해야함-->
+            <div class="form-group max-width: 600px">
+                <label for="name"></label>
+                <div>
+                    <h1 class="py-3 text-left">new product</h1>
+                    <p>제품명</p>
+                    <input class="row w-100" type="text" id="name" name="name" placeholder="product name">
+                    <p>가격</p>
+                    <input class="row w-100" type="int" id="price" name="price" placeholder="price">
+                    <p>수량</p>
+                    <input class="row w-100" type="int" id="stock" name="stock" placeholder="stock">
+                </div>
+            </div>
+            <div>
+
+            </div>
+            <div class="row">
+                <div class="col">
+                <button class="w-100 btn btn-primary btn-lg" type="submit">add product</button>
+                </div>
+                <div class="col">
+                    <button class="w-100 btn btn-secondary btn-lg"
+                    onclick="location.href='/'" type="button">cancel </button>
+                </div>
+            </div>
+        </form>
+    </div>
 </div> <!-- /container -->
 </body>
 </html>

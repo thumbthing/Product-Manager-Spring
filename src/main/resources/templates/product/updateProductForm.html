@@ -1,18 +1,36 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <link href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+</head>
 <body>
-<div class="container">
+<div class="container" style="max-width: 600px">
     <form th:action="@{/product/update/} + ${no}" method="post">
         <!--      // post를 허용해야함-->
         <div class="form-group">
             <label for="name">상품명</label>
             <h1>상품 갱신</h1>
-
-            <input type="text" id="name" name="name" placeholder="변경 제품명">
-            <input type="int" id="price" name="price" placeholder="변경 가격">
-            <input type="int" id="stock" name="stock" placeholder="변경 재고량">
+            <p>product name</p>
+            <input class="row w-100" type="text" id="name" name="name" th:value="*{name}" placeholder="변경 제품명">
+            <p>price</p>
+            <input class="row w-100" type="int" id="price" name="price" th:value="*{price}" placeholder="변경 가격">
+            <p>stock</p>
+            <input class="row w-100" type="int" id="stock" name="stock" th:value="*{stock}" placeholder="변경 재고량">
         </div>
-        <button type="submit">상품 갱신</button>
+        <div class="row">
+            <div class="col">
+                <button class="w-100 btn btn-primary btn-lg" type="submit">update product</button>
+            </div>
+            <div class="col">
+                <button class="w-100 btn btn-secondary btn-lg"
+                        onclick="location.href='/productList'" type="button">cancel </button>
+            </div>
+        </div>
+
+
+
+
     </form>
 </div> <!-- /container -->
 </body>

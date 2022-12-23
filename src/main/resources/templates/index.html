@@ -1,22 +1,25 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<html>
 <head>
     <meta charset="UTF-8">
     <title>Product Manager</title>
+    <link href="css\bootstrap.min.css" rel="stylesheet">
+<!--    절대 경로로 하니까 안되네...?-->
 </head>
 <body>
 
-    <div class="container">
-        <div>
-            <h3>option</h3>
-            <ul>
-                <li>
-                    <a href="/product/create">add product</a>
-                </li>
-                <li>
-                    <a href="/productList">show list</a>
-                </li>
-            </ul>
+    <div class="container" style="max-width: 600px">
+        <div class="py-3 text-center ">
+            <h3>Product</h3>
+        </div>
+        <div class="row">
+            <div class="col">
+                <a class="w-100 btn btn-outline-primary" href="/product/create">add product</a>
+            </div>
+            <div class="col">
+                <a class="w-100 btn btn-outline-primary" href="/productList">show list</a>
+            </div>
         </div>
     </div>
 </body>

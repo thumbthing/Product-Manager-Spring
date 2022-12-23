@@ -1,27 +1,48 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <link href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+</head>
 <body>
 <div class="container">
     <div>
         <table>
-            <thead>
-            <tr>
-                <h1>상품 목록</h1>
-                <th>ID</th>
-                <th>상품명</th>
+            <thead style="max-width: 1000px">
+            <tr class="text-center">
+                <h1>Product list</h1>
+                <th class="w-40">ID</th>
+                <th class="w-300">product name</th>
+                <th class="w-230">price</th>
+                <th class="w-230">stock</th>
             </tr>
+
             </thead>
             <tbody>
             <tr th:each="product : ${productList}">
-                <td th:text="${product.no}"></td>
-                <td th:text="${product.name}"></td>
-                <td th:text="${product.price}"></td>
-                <td th:text="${product.stock}"></td>
-                <td><a th:href="@{/product/update/{no} (no=${product.no})}">Update</a></td>
-                <td><a th:href="@{/product/delete/{no} (no=${product.no})}">Delete</a></td>
+                <td class="text" th:text="${product.no}"></td>
+                <td class="" th:text="${product.name}"></td>
+                <td class="" th:text="${product.price}"></td>
+                <td class="" th:text="${product.stock}"></td>
+                <td><a class="btn btn-outline-primary" role="button"  th:href="@{/product/update/{no} (no=${product.no})}">Update</a></td>
+                <td><a class="btn btn-secondary" role="button"  th:href="@{/product/delete/{no} (no=${product.no})}">Delete</a></td>
+
+
+
             </tr>
+
+
             </tbody>
         </table>
+        <div class="col">
+            <button class="w-20 btn btn-secondary btn-lg"
+                    th:onclick="location.href='/'" type="button">cancel </button>
+        </div>
+        <div class="col">
+
+        </div>
+
+
     </div>
 </div> <!-- /container -->
 </body>

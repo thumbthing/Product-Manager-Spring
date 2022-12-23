@@ -8,13 +8,14 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 import java.util.Optional;
 
-// bean 등록 말고 이렇게 따로따로 어노테이션 달아주는게 편하다
+// bean 등록 말고 이렇게 따로따로 어노테이션 달아주는게 편하다 @Service
 @Service
 @Transactional
 public class ProductService {
 
     private final ProductRepository productRepository;
 
+    //생성자
     public ProductService(ProductRepository productRepository) {
         this.productRepository = productRepository;
     }
@@ -26,6 +27,7 @@ public class ProductService {
         return product.getNo();
     }
 
+    // 중복시 안내 문구 띄우기
     private void validateDuplicateProduct(Product product) {
         productRepository.findByName(product.getName())
             .ifPresent(p -> {
@@ -34,13 +36,8 @@ public class ProductService {
     }
 
 
-    // 지금 이거 조금만 더 작성하며 될듯
-    // delete from db
-//    public void delete(Product product) {
-//        // 가져온 상품을 지워주기
-//        productRepository.delete(product);
-//    }
 
+    // delete from db
     public void delete(Long no) {
         productRepository.delete(productRepository.findByNo(no).get());
     }
@@ -58,10 +55,12 @@ public class ProductService {
 
     }
 
+    // find from db
     public List<Product> findProduct() {
         return productRepository.findAll();
     }
 
+    // find one from db
     public Optional<Product> findOne(Long productNo) {
         return productRepository.findByNo(productNo);
     }
