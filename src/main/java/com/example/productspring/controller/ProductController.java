@@ -111,9 +111,9 @@ public class ProductController {
     }
 
 
-    @GetMapping("/api")
-    public String restPage() {
-        System.out.println("start");
-        return "product/api/apiPage";
-    }
+//    @GetMapping("/api")
+//    public String apiPage() {
+//        System.out.println("start");
+//        return "product/api/apiPage";
+//    }
 }

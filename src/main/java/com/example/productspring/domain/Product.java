@@ -13,7 +13,8 @@ import javax.persistence.Id;
 @Getter
 @Setter
 @Entity
-
+// Entity 가 붙어 있으면 JPA 가 관리를 한다는 뜻이다
+// 221226 오류 정리를 좀 해보자
 //@Builder
 public class Product {
     @Id
